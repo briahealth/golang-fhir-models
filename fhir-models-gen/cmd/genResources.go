@@ -401,7 +401,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 							parentName == "Extension" && name == "Url" {
 							typeIdentifier = "string"
 						} else {
-							typeIdentifier = typeCodeToTypeIdentifier(element.Type[0].Code)
+							typeIdentifier = typeCodeToTypeIdentifier(parentName, name, element.Type[0].Code)
 						}
 						if typeIdentifier == "Element" || typeIdentifier == "BackboneElement" {
 							backboneElementName := parentName + name
@@ -448,7 +448,7 @@ func requiredValueSetBinding(elementDefinition fhir.ElementDefinition) *string {
 	return nil
 }
 
-func typeCodeToTypeIdentifier(typeCode string) string {
+func typeCodeToTypeIdentifier(parentName, name, typeCode string) string {
 	switch typeCode {
 	case "base64Binary":
 		return "string"
@@ -459,10 +459,13 @@ func typeCodeToTypeIdentifier(typeCode string) string {
 	case "code":
 		return "string"
 	case "date":
+		fmt.Printf("Wrong type %s, parentName %s name %s convert into %s\n", "string", parentName, name, "date")
 		return "string"
 	case "dateTime":
+		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "dateTime")
 		return "string"
 	case "decimal":
+		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "decimal")
 		return "string"
 	case "id":
 		return "string"
@@ -479,6 +482,7 @@ func typeCodeToTypeIdentifier(typeCode string) string {
 	case "string":
 		return "string"
 	case "time":
+		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "time")
 		return "string"
 	case "unsignedInt":
 		return "int"
@@ -495,6 +499,7 @@ func typeCodeToTypeIdentifier(typeCode string) string {
 	default:
 		return typeCode
 	}
+	return ""
 }
 
 func init() {
