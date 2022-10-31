@@ -37,7 +37,7 @@ type Condition struct {
 	BodySite           []CodeableConcept   `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
 	Subject            Reference           `bson:"subject" json:"subject"`
 	Encounter          *Reference          `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	RecordedDate       *string             `bson:"recordedDate,omitempty" gorm:"type:dateTime" json:"recordedDate,omitempty"`
+	RecordedDate       *string             `bson:"recordedDate,omitempty" gorm:"type:timestamp" json:"recordedDate,omitempty"`
 	Recorder           *Reference          `bson:"recorder,omitempty" json:"recorder,omitempty"`
 	Asserter           *Reference          `bson:"asserter,omitempty" json:"asserter,omitempty"`
 	Stage              []ConditionStage    `bson:"stage,omitempty" json:"stage,omitempty"`

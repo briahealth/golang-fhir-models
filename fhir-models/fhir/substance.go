@@ -41,7 +41,7 @@ type SubstanceInstance struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Expiry            *string     `bson:"expiry,omitempty" gorm:"type:dateTime" json:"expiry,omitempty"`
+	Expiry            *string     `bson:"expiry,omitempty" gorm:"type:timestamp" json:"expiry,omitempty"`
 	Quantity          *Quantity   `bson:"quantity,omitempty" json:"quantity,omitempty"`
 }
 type SubstanceIngredient struct {

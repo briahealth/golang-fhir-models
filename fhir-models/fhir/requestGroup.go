@@ -40,7 +40,7 @@ type RequestGroup struct {
 	Code                  *CodeableConcept     `bson:"code,omitempty" json:"code,omitempty"`
 	Subject               *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter             *Reference           `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	AuthoredOn            *string              `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
+	AuthoredOn            *string              `bson:"authoredOn,omitempty" gorm:"type:timestamp" json:"authoredOn,omitempty"`
 	Author                *Reference           `bson:"author,omitempty" json:"author,omitempty"`
 	ReasonCode            []CodeableConcept    `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference       []Reference          `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`

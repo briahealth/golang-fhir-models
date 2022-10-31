@@ -35,7 +35,7 @@ type ClinicalImpression struct {
 	Description              *string                           `bson:"description,omitempty" json:"description,omitempty"`
 	Subject                  Reference                         `bson:"subject" json:"subject"`
 	Encounter                *Reference                        `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Date                     *string                           `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date                     *string                           `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Assessor                 *Reference                        `bson:"assessor,omitempty" json:"assessor,omitempty"`
 	Previous                 *Reference                        `bson:"previous,omitempty" json:"previous,omitempty"`
 	Problem                  []Reference                       `bson:"problem,omitempty" json:"problem,omitempty"`

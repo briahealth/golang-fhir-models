@@ -34,7 +34,7 @@ type Immunization struct {
 	VaccineCode        CodeableConcept               `bson:"vaccineCode" json:"vaccineCode"`
 	Patient            Reference                     `bson:"patient" json:"patient"`
 	Encounter          *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Recorded           *string                       `bson:"recorded,omitempty" gorm:"type:dateTime" json:"recorded,omitempty"`
+	Recorded           *string                       `bson:"recorded,omitempty" gorm:"type:timestamp" json:"recorded,omitempty"`
 	PrimarySource      *bool                         `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
 	ReportOrigin       *CodeableConcept              `bson:"reportOrigin,omitempty" json:"reportOrigin,omitempty"`
 	Location           *Reference                    `bson:"location,omitempty" json:"location,omitempty"`
@@ -69,14 +69,14 @@ type ImmunizationEducation struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DocumentType      *string     `bson:"documentType,omitempty" json:"documentType,omitempty"`
 	Reference         *string     `bson:"reference,omitempty" json:"reference,omitempty"`
-	PublicationDate   *string     `bson:"publicationDate,omitempty" gorm:"type:dateTime" json:"publicationDate,omitempty"`
-	PresentationDate  *string     `bson:"presentationDate,omitempty" gorm:"type:dateTime" json:"presentationDate,omitempty"`
+	PublicationDate   *string     `bson:"publicationDate,omitempty" gorm:"type:timestamp" json:"publicationDate,omitempty"`
+	PresentationDate  *string     `bson:"presentationDate,omitempty" gorm:"type:timestamp" json:"presentationDate,omitempty"`
 }
 type ImmunizationReaction struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Date              *string     `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string     `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Detail            *Reference  `bson:"detail,omitempty" json:"detail,omitempty"`
 	Reported          *bool       `bson:"reported,omitempty" json:"reported,omitempty"`
 }

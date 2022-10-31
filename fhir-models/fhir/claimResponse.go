@@ -34,7 +34,7 @@ type ClaimResponse struct {
 	SubType              *CodeableConcept                `bson:"subType,omitempty" json:"subType,omitempty"`
 	Use                  Use                             `bson:"use" json:"use"`
 	Patient              Reference                       `bson:"patient" json:"patient"`
-	Created              string                          `bson:"created" gorm:"type:dateTime" json:"created"`
+	Created              string                          `bson:"created" gorm:"type:timestamp" json:"created"`
 	Insurer              Reference                       `bson:"insurer" json:"insurer"`
 	Requestor            *Reference                      `bson:"requestor,omitempty" json:"requestor,omitempty"`
 	Request              *Reference                      `bson:"request,omitempty" json:"request,omitempty"`

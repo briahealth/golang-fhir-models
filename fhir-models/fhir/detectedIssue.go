@@ -52,7 +52,7 @@ type DetectedIssueMitigation struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Action            CodeableConcept `bson:"action" json:"action"`
-	Date              *string         `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string         `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Author            *Reference      `bson:"author,omitempty" json:"author,omitempty"`
 }
 type OtherDetectedIssue DetectedIssue

@@ -35,7 +35,7 @@ type List struct {
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 	Subject           *Reference       `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference       `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Date              *string          `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string          `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Source            *Reference       `bson:"source,omitempty" json:"source,omitempty"`
 	OrderedBy         *CodeableConcept `bson:"orderedBy,omitempty" json:"orderedBy,omitempty"`
 	Note              []Annotation     `bson:"note,omitempty" json:"note,omitempty"`
@@ -48,7 +48,7 @@ type ListEntry struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Flag              *CodeableConcept `bson:"flag,omitempty" json:"flag,omitempty"`
 	Deleted           *bool            `bson:"deleted,omitempty" json:"deleted,omitempty"`
-	Date              *string          `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string          `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Item              Reference        `bson:"item" json:"item"`
 }
 type OtherList List

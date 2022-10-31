@@ -31,7 +31,7 @@ type ImmunizationEvaluation struct {
 	Identifier        []Identifier                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            ImmunizationEvaluationStatusCodes `bson:"status" json:"status"`
 	Patient           Reference                         `bson:"patient" json:"patient"`
-	Date              *string                           `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string                           `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Authority         *Reference                        `bson:"authority,omitempty" json:"authority,omitempty"`
 	TargetDisease     CodeableConcept                   `bson:"targetDisease" json:"targetDisease"`
 	ImmunizationEvent Reference                         `bson:"immunizationEvent" json:"immunizationEvent"`

@@ -26,5 +26,5 @@ type MarketingStatus struct {
 	Jurisdiction      *CodeableConcept `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Status            CodeableConcept  `bson:"status" json:"status"`
 	DateRange         *Period          `bson:"dateRange,omitempty" json:"dateRange,omitempty"`
-	RestoreDate       *string          `bson:"restoreDate,omitempty" gorm:"type:dateTime" json:"restoreDate,omitempty"`
+	RestoreDate       *string          `bson:"restoreDate,omitempty" gorm:"type:timestamp" json:"restoreDate,omitempty"`
 }

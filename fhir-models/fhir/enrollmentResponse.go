@@ -33,7 +33,7 @@ type EnrollmentResponse struct {
 	Request           *Reference                    `bson:"request,omitempty" json:"request,omitempty"`
 	Outcome           *RemittanceOutcome            `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	Disposition       *string                       `bson:"disposition,omitempty" json:"disposition,omitempty"`
-	Created           *string                       `bson:"created,omitempty" gorm:"type:dateTime" json:"created,omitempty"`
+	Created           *string                       `bson:"created,omitempty" gorm:"type:timestamp" json:"created,omitempty"`
 	Organization      *Reference                    `bson:"organization,omitempty" json:"organization,omitempty"`
 	RequestProvider   *Reference                    `bson:"requestProvider,omitempty" json:"requestProvider,omitempty"`
 }

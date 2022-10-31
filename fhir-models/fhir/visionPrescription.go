@@ -30,10 +30,10 @@ type VisionPrescription struct {
 	ModifierExtension []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            FinancialResourceStatusCodes          `bson:"status" json:"status"`
-	Created           string                                `bson:"created" gorm:"type:dateTime" json:"created"`
+	Created           string                                `bson:"created" gorm:"type:timestamp" json:"created"`
 	Patient           Reference                             `bson:"patient" json:"patient"`
 	Encounter         *Reference                            `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	DateWritten       string                                `bson:"dateWritten" gorm:"type:dateTime" json:"dateWritten"`
+	DateWritten       string                                `bson:"dateWritten" gorm:"type:timestamp" json:"dateWritten"`
 	Prescriber        Reference                             `bson:"prescriber" json:"prescriber"`
 	LensSpecification []VisionPrescriptionLensSpecification `bson:"lensSpecification" json:"lensSpecification"`
 }

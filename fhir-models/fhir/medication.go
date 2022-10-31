@@ -49,7 +49,7 @@ type MedicationBatch struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	LotNumber         *string     `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`
-	ExpirationDate    *string     `bson:"expirationDate,omitempty" gorm:"type:dateTime" json:"expirationDate,omitempty"`
+	ExpirationDate    *string     `bson:"expirationDate,omitempty" gorm:"type:timestamp" json:"expirationDate,omitempty"`
 }
 type OtherMedication Medication
 

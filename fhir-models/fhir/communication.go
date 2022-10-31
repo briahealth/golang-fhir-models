@@ -43,8 +43,8 @@ type Communication struct {
 	Topic                 *CodeableConcept       `bson:"topic,omitempty" json:"topic,omitempty"`
 	About                 []Reference            `bson:"about,omitempty" json:"about,omitempty"`
 	Encounter             *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Sent                  *string                `bson:"sent,omitempty" gorm:"type:dateTime" json:"sent,omitempty"`
-	Received              *string                `bson:"received,omitempty" gorm:"type:dateTime" json:"received,omitempty"`
+	Sent                  *string                `bson:"sent,omitempty" gorm:"type:timestamp" json:"sent,omitempty"`
+	Received              *string                `bson:"received,omitempty" gorm:"type:timestamp" json:"received,omitempty"`
 	Recipient             []Reference            `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	Sender                *Reference             `bson:"sender,omitempty" json:"sender,omitempty"`
 	ReasonCode            []CodeableConcept      `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`

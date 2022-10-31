@@ -33,7 +33,7 @@ type Evidence struct {
 	Version            *string                      `bson:"version,omitempty" json:"version,omitempty"`
 	Title              *string                      `bson:"title,omitempty" json:"title,omitempty"`
 	Status             PublicationStatus            `bson:"status" json:"status"`
-	Date               *string                      `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date               *string                      `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	UseContext         []UsageContext               `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	ApprovalDate       *string                      `bson:"approvalDate,omitempty" gorm:"type:date" json:"approvalDate,omitempty"`
 	LastReviewDate     *string                      `bson:"lastReviewDate,omitempty" gorm:"type:date" json:"lastReviewDate,omitempty"`

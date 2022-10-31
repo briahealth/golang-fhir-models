@@ -34,7 +34,7 @@ type Composition struct {
 	Category          []CodeableConcept      `bson:"category,omitempty" json:"category,omitempty"`
 	Subject           *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Date              string                 `bson:"date" gorm:"type:dateTime" json:"date"`
+	Date              string                 `bson:"date" gorm:"type:timestamp" json:"date"`
 	Author            []Reference            `bson:"author" json:"author"`
 	Title             string                 `bson:"title" json:"title"`
 	Confidentiality   *string                `bson:"confidentiality,omitempty" json:"confidentiality,omitempty"`
@@ -49,7 +49,7 @@ type CompositionAttester struct {
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Mode              CompositionAttestationMode `bson:"mode" json:"mode"`
-	Time              *string                    `bson:"time,omitempty" gorm:"type:dateTime" json:"time,omitempty"`
+	Time              *string                    `bson:"time,omitempty" gorm:"type:timestamp" json:"time,omitempty"`
 	Party             *Reference                 `bson:"party,omitempty" json:"party,omitempty"`
 }
 type CompositionRelatesTo struct {

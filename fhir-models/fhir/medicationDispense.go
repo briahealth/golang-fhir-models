@@ -41,8 +41,8 @@ type MedicationDispense struct {
 	Type                    *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
 	Quantity                *Quantity                       `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	DaysSupply              *Quantity                       `bson:"daysSupply,omitempty" json:"daysSupply,omitempty"`
-	WhenPrepared            *string                         `bson:"whenPrepared,omitempty" gorm:"type:dateTime" json:"whenPrepared,omitempty"`
-	WhenHandedOver          *string                         `bson:"whenHandedOver,omitempty" gorm:"type:dateTime" json:"whenHandedOver,omitempty"`
+	WhenPrepared            *string                         `bson:"whenPrepared,omitempty" gorm:"type:timestamp" json:"whenPrepared,omitempty"`
+	WhenHandedOver          *string                         `bson:"whenHandedOver,omitempty" gorm:"type:timestamp" json:"whenHandedOver,omitempty"`
 	Destination             *Reference                      `bson:"destination,omitempty" json:"destination,omitempty"`
 	Receiver                []Reference                     `bson:"receiver,omitempty" json:"receiver,omitempty"`
 	Note                    []Annotation                    `bson:"note,omitempty" json:"note,omitempty"`

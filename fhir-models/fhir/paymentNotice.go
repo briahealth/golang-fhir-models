@@ -32,7 +32,7 @@ type PaymentNotice struct {
 	Status            FinancialResourceStatusCodes `bson:"status" json:"status"`
 	Request           *Reference                   `bson:"request,omitempty" json:"request,omitempty"`
 	Response          *Reference                   `bson:"response,omitempty" json:"response,omitempty"`
-	Created           string                       `bson:"created" gorm:"type:dateTime" json:"created"`
+	Created           string                       `bson:"created" gorm:"type:timestamp" json:"created"`
 	Provider          *Reference                   `bson:"provider,omitempty" json:"provider,omitempty"`
 	Payment           Reference                    `bson:"payment" json:"payment"`
 	PaymentDate       *string                      `bson:"paymentDate,omitempty" gorm:"type:date" json:"paymentDate,omitempty"`

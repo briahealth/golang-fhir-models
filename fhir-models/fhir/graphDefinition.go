@@ -33,7 +33,7 @@ type GraphDefinition struct {
 	Name              string                `bson:"name" json:"name"`
 	Status            PublicationStatus     `bson:"status" json:"status"`
 	Experimental      *bool                 `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string               `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string               `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Publisher         *string               `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail       `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string               `bson:"description,omitempty" json:"description,omitempty"`

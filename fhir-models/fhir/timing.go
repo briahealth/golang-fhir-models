@@ -22,7 +22,7 @@ type Timing struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Event             []string         `bson:"event,omitempty" gorm:"type:dateTime" json:"event,omitempty"`
+	Event             []string         `bson:"event,omitempty" gorm:"type:timestamp" json:"event,omitempty"`
 	Repeat            *TimingRepeat    `bson:"repeat,omitempty" json:"repeat,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 }

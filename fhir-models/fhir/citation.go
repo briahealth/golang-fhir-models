@@ -35,7 +35,7 @@ type Citation struct {
 	Title             *string                  `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus        `bson:"status" json:"status"`
 	Experimental      *bool                    `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string                  `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string                  `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Publisher         *string                  `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail          `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                  `bson:"description,omitempty" json:"description,omitempty"`
@@ -93,7 +93,7 @@ type CitationCitedArtifact struct {
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                           `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	RelatedIdentifier []Identifier                           `bson:"relatedIdentifier,omitempty" json:"relatedIdentifier,omitempty"`
-	DateAccessed      *string                                `bson:"dateAccessed,omitempty" gorm:"type:dateTime" json:"dateAccessed,omitempty"`
+	DateAccessed      *string                                `bson:"dateAccessed,omitempty" gorm:"type:timestamp" json:"dateAccessed,omitempty"`
 	Version           *CitationCitedArtifactVersion          `bson:"version,omitempty" json:"version,omitempty"`
 	CurrentState      []CodeableConcept                      `bson:"currentState,omitempty" json:"currentState,omitempty"`
 	StatusDate        []CitationCitedArtifactStatusDate      `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
@@ -160,8 +160,8 @@ type CitationCitedArtifactPublicationForm struct {
 	ModifierExtension []Extension                                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	PublishedIn       *CitationCitedArtifactPublicationFormPublishedIn     `bson:"publishedIn,omitempty" json:"publishedIn,omitempty"`
 	PeriodicRelease   *CitationCitedArtifactPublicationFormPeriodicRelease `bson:"periodicRelease,omitempty" json:"periodicRelease,omitempty"`
-	ArticleDate       *string                                              `bson:"articleDate,omitempty" gorm:"type:dateTime" json:"articleDate,omitempty"`
-	LastRevisionDate  *string                                              `bson:"lastRevisionDate,omitempty" gorm:"type:dateTime" json:"lastRevisionDate,omitempty"`
+	ArticleDate       *string                                              `bson:"articleDate,omitempty" gorm:"type:timestamp" json:"articleDate,omitempty"`
+	LastRevisionDate  *string                                              `bson:"lastRevisionDate,omitempty" gorm:"type:timestamp" json:"lastRevisionDate,omitempty"`
 	Language          []CodeableConcept                                    `bson:"language,omitempty" json:"language,omitempty"`
 	AccessionNumber   *string                                              `bson:"accessionNumber,omitempty" json:"accessionNumber,omitempty"`
 	PageString        *string                                              `bson:"pageString,omitempty" json:"pageString,omitempty"`
@@ -263,7 +263,7 @@ type CitationCitedArtifactContributorshipEntryContributionInstance struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept `bson:"type" json:"type"`
-	Time              *string         `bson:"time,omitempty" gorm:"type:dateTime" json:"time,omitempty"`
+	Time              *string         `bson:"time,omitempty" gorm:"type:timestamp" json:"time,omitempty"`
 }
 type CitationCitedArtifactContributorshipSummary struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`

@@ -30,7 +30,7 @@ type EnrollmentRequest struct {
 	ModifierExtension []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                  `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            *FinancialResourceStatusCodes `bson:"status,omitempty" json:"status,omitempty"`
-	Created           *string                       `bson:"created,omitempty" gorm:"type:dateTime" json:"created,omitempty"`
+	Created           *string                       `bson:"created,omitempty" gorm:"type:timestamp" json:"created,omitempty"`
 	Insurer           *Reference                    `bson:"insurer,omitempty" json:"insurer,omitempty"`
 	Provider          *Reference                    `bson:"provider,omitempty" json:"provider,omitempty"`
 	Candidate         *Reference                    `bson:"candidate,omitempty" json:"candidate,omitempty"`

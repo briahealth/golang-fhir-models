@@ -469,7 +469,7 @@ func typeCodeToTypeIdentifier(parentName, name, typeCode string) (dataType strin
 		return "string", "date"
 	case "dateTime":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "dateTime")
-		return "string", "dateTime"
+		return "string", "timestamp"
 	case "decimal":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "decimal")
 		return "string", "decimal"

@@ -35,7 +35,7 @@ type ExplanationOfBenefit struct {
 	Use                   Use                                    `bson:"use" json:"use"`
 	Patient               Reference                              `bson:"patient" json:"patient"`
 	BillablePeriod        *Period                                `bson:"billablePeriod,omitempty" json:"billablePeriod,omitempty"`
-	Created               string                                 `bson:"created" gorm:"type:dateTime" json:"created"`
+	Created               string                                 `bson:"created" gorm:"type:timestamp" json:"created"`
 	Enterer               *Reference                             `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Insurer               Reference                              `bson:"insurer" json:"insurer"`
 	Provider              Reference                              `bson:"provider" json:"provider"`
@@ -121,7 +121,7 @@ type ExplanationOfBenefitProcedure struct {
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int               `bson:"sequence" json:"sequence"`
 	Type              []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	Date              *string           `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string           `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Udi               []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 }
 type ExplanationOfBenefitInsurance struct {

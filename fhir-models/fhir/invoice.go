@@ -34,7 +34,7 @@ type Invoice struct {
 	Type                *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
 	Subject             *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
 	Recipient           *Reference                      `bson:"recipient,omitempty" json:"recipient,omitempty"`
-	Date                *string                         `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date                *string                         `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 	Participant         []InvoiceParticipant            `bson:"participant,omitempty" json:"participant,omitempty"`
 	Issuer              *Reference                      `bson:"issuer,omitempty" json:"issuer,omitempty"`
 	Account             *Reference                      `bson:"account,omitempty" json:"account,omitempty"`

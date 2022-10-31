@@ -34,7 +34,7 @@ type SupplyRequest struct {
 	Priority          *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
 	Quantity          Quantity                 `bson:"quantity" json:"quantity"`
 	Parameter         []SupplyRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
-	AuthoredOn        *string                  `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
+	AuthoredOn        *string                  `bson:"authoredOn,omitempty" gorm:"type:timestamp" json:"authoredOn,omitempty"`
 	Requester         *Reference               `bson:"requester,omitempty" json:"requester,omitempty"`
 	Supplier          []Reference              `bson:"supplier,omitempty" json:"supplier,omitempty"`
 	ReasonCode        []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`

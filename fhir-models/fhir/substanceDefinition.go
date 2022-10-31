@@ -102,7 +102,7 @@ type SubstanceDefinitionCode struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 	Status            *CodeableConcept `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate        *string          `bson:"statusDate,omitempty" gorm:"type:dateTime" json:"statusDate,omitempty"`
+	StatusDate        *string          `bson:"statusDate,omitempty" gorm:"type:timestamp" json:"statusDate,omitempty"`
 	Note              []Annotation     `bson:"note,omitempty" json:"note,omitempty"`
 	Source            []Reference      `bson:"source,omitempty" json:"source,omitempty"`
 }
@@ -128,7 +128,7 @@ type SubstanceDefinitionNameOfficial struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Authority         *CodeableConcept `bson:"authority,omitempty" json:"authority,omitempty"`
 	Status            *CodeableConcept `bson:"status,omitempty" json:"status,omitempty"`
-	Date              *string          `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
+	Date              *string          `bson:"date,omitempty" gorm:"type:timestamp" json:"date,omitempty"`
 }
 type SubstanceDefinitionRelationship struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`

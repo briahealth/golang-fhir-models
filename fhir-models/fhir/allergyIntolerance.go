@@ -37,10 +37,10 @@ type AllergyIntolerance struct {
 	Code               *CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
 	Patient            Reference                      `bson:"patient" json:"patient"`
 	Encounter          *Reference                     `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	RecordedDate       *string                        `bson:"recordedDate,omitempty" gorm:"type:dateTime" json:"recordedDate,omitempty"`
+	RecordedDate       *string                        `bson:"recordedDate,omitempty" gorm:"type:timestamp" json:"recordedDate,omitempty"`
 	Recorder           *Reference                     `bson:"recorder,omitempty" json:"recorder,omitempty"`
 	Asserter           *Reference                     `bson:"asserter,omitempty" json:"asserter,omitempty"`
-	LastOccurrence     *string                        `bson:"lastOccurrence,omitempty" gorm:"type:dateTime" json:"lastOccurrence,omitempty"`
+	LastOccurrence     *string                        `bson:"lastOccurrence,omitempty" gorm:"type:timestamp" json:"lastOccurrence,omitempty"`
 	Note               []Annotation                   `bson:"note,omitempty" json:"note,omitempty"`
 	Reaction           []AllergyIntoleranceReaction   `bson:"reaction,omitempty" json:"reaction,omitempty"`
 }
@@ -51,7 +51,7 @@ type AllergyIntoleranceReaction struct {
 	Substance         *CodeableConcept            `bson:"substance,omitempty" json:"substance,omitempty"`
 	Manifestation     []CodeableConcept           `bson:"manifestation" json:"manifestation"`
 	Description       *string                     `bson:"description,omitempty" json:"description,omitempty"`
-	Onset             *string                     `bson:"onset,omitempty" gorm:"type:dateTime" json:"onset,omitempty"`
+	Onset             *string                     `bson:"onset,omitempty" gorm:"type:timestamp" json:"onset,omitempty"`
 	Severity          *AllergyIntoleranceSeverity `bson:"severity,omitempty" json:"severity,omitempty"`
 	ExposureRoute     *CodeableConcept            `bson:"exposureRoute,omitempty" json:"exposureRoute,omitempty"`
 	Note              []Annotation                `bson:"note,omitempty" json:"note,omitempty"`

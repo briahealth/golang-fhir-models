@@ -42,7 +42,7 @@ type CommunicationRequest struct {
 	About             []Reference                   `bson:"about,omitempty" json:"about,omitempty"`
 	Encounter         *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Payload           []CommunicationRequestPayload `bson:"payload,omitempty" json:"payload,omitempty"`
-	AuthoredOn        *string                       `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
+	AuthoredOn        *string                       `bson:"authoredOn,omitempty" gorm:"type:timestamp" json:"authoredOn,omitempty"`
 	Requester         *Reference                    `bson:"requester,omitempty" json:"requester,omitempty"`
 	Recipient         []Reference                   `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	Sender            *Reference                    `bson:"sender,omitempty" json:"sender,omitempty"`

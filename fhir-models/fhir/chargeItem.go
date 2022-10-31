@@ -46,7 +46,7 @@ type ChargeItem struct {
 	PriceOverride          *Money                `bson:"priceOverride,omitempty" json:"priceOverride,omitempty"`
 	OverrideReason         *string               `bson:"overrideReason,omitempty" json:"overrideReason,omitempty"`
 	Enterer                *Reference            `bson:"enterer,omitempty" json:"enterer,omitempty"`
-	EnteredDate            *string               `bson:"enteredDate,omitempty" gorm:"type:dateTime" json:"enteredDate,omitempty"`
+	EnteredDate            *string               `bson:"enteredDate,omitempty" gorm:"type:timestamp" json:"enteredDate,omitempty"`
 	Reason                 []CodeableConcept     `bson:"reason,omitempty" json:"reason,omitempty"`
 	Service                []Reference           `bson:"service,omitempty" json:"service,omitempty"`
 	Account                []Reference           `bson:"account,omitempty" json:"account,omitempty"`

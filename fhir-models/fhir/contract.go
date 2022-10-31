@@ -36,7 +36,7 @@ type Contract struct {
 	InstantiatesCanonical *Reference                   `bson:"instantiatesCanonical,omitempty" json:"instantiatesCanonical,omitempty"`
 	InstantiatesUri       *string                      `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
 	ContentDerivative     *CodeableConcept             `bson:"contentDerivative,omitempty" json:"contentDerivative,omitempty"`
-	Issued                *string                      `bson:"issued,omitempty" gorm:"type:dateTime" json:"issued,omitempty"`
+	Issued                *string                      `bson:"issued,omitempty" gorm:"type:timestamp" json:"issued,omitempty"`
 	Applies               *Period                      `bson:"applies,omitempty" json:"applies,omitempty"`
 	ExpirationType        *CodeableConcept             `bson:"expirationType,omitempty" json:"expirationType,omitempty"`
 	Subject               []Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -67,7 +67,7 @@ type ContractContentDefinition struct {
 	Type              CodeableConcept                        `bson:"type" json:"type"`
 	SubType           *CodeableConcept                       `bson:"subType,omitempty" json:"subType,omitempty"`
 	Publisher         *Reference                             `bson:"publisher,omitempty" json:"publisher,omitempty"`
-	PublicationDate   *string                                `bson:"publicationDate,omitempty" gorm:"type:dateTime" json:"publicationDate,omitempty"`
+	PublicationDate   *string                                `bson:"publicationDate,omitempty" gorm:"type:timestamp" json:"publicationDate,omitempty"`
 	PublicationStatus ContractResourcePublicationStatusCodes `bson:"publicationStatus" json:"publicationStatus"`
 	Copyright         *string                                `bson:"copyright,omitempty" json:"copyright,omitempty"`
 }
@@ -76,7 +76,7 @@ type ContractTerm struct {
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Issued            *string                     `bson:"issued,omitempty" gorm:"type:dateTime" json:"issued,omitempty"`
+	Issued            *string                     `bson:"issued,omitempty" gorm:"type:timestamp" json:"issued,omitempty"`
 	Applies           *Period                     `bson:"applies,omitempty" json:"applies,omitempty"`
 	Type              *CodeableConcept            `bson:"type,omitempty" json:"type,omitempty"`
 	SubType           *CodeableConcept            `bson:"subType,omitempty" json:"subType,omitempty"`
@@ -156,14 +156,14 @@ type ContractTermAssetValuedItem struct {
 	Extension           []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier          *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	EffectiveTime       *string     `bson:"effectiveTime,omitempty" gorm:"type:dateTime" json:"effectiveTime,omitempty"`
+	EffectiveTime       *string     `bson:"effectiveTime,omitempty" gorm:"type:timestamp" json:"effectiveTime,omitempty"`
 	Quantity            *Quantity   `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice           *Money      `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
 	Factor              *string     `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Points              *string     `bson:"points,omitempty" gorm:"type:decimal" json:"points,omitempty"`
 	Net                 *Money      `bson:"net,omitempty" json:"net,omitempty"`
 	Payment             *string     `bson:"payment,omitempty" json:"payment,omitempty"`
-	PaymentDate         *string     `bson:"paymentDate,omitempty" gorm:"type:dateTime" json:"paymentDate,omitempty"`
+	PaymentDate         *string     `bson:"paymentDate,omitempty" gorm:"type:timestamp" json:"paymentDate,omitempty"`
 	Responsible         *Reference  `bson:"responsible,omitempty" json:"responsible,omitempty"`
 	Recipient           *Reference  `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	LinkId              []string    `bson:"linkId,omitempty" json:"linkId,omitempty"`

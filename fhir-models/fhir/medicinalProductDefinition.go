@@ -33,7 +33,7 @@ type MedicinalProductDefinition struct {
 	Domain                         *CodeableConcept                           `bson:"domain,omitempty" json:"domain,omitempty"`
 	Version                        *string                                    `bson:"version,omitempty" json:"version,omitempty"`
 	Status                         *CodeableConcept                           `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate                     *string                                    `bson:"statusDate,omitempty" gorm:"type:dateTime" json:"statusDate,omitempty"`
+	StatusDate                     *string                                    `bson:"statusDate,omitempty" gorm:"type:timestamp" json:"statusDate,omitempty"`
 	Description                    *string                                    `bson:"description,omitempty" json:"description,omitempty"`
 	CombinedPharmaceuticalDoseForm *CodeableConcept                           `bson:"combinedPharmaceuticalDoseForm,omitempty" json:"combinedPharmaceuticalDoseForm,omitempty"`
 	Route                          []CodeableConcept                          `bson:"route,omitempty" json:"route,omitempty"`

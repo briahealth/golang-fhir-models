@@ -36,7 +36,7 @@ type NutritionOrder struct {
 	Intent                 RequestIntent                 `bson:"intent" json:"intent"`
 	Patient                Reference                     `bson:"patient" json:"patient"`
 	Encounter              *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	DateTime               string                        `bson:"dateTime" gorm:"type:dateTime" json:"dateTime"`
+	DateTime               string                        `bson:"dateTime" gorm:"type:timestamp" json:"dateTime"`
 	Orderer                *Reference                    `bson:"orderer,omitempty" json:"orderer,omitempty"`
 	AllergyIntolerance     []Reference                   `bson:"allergyIntolerance,omitempty" json:"allergyIntolerance,omitempty"`
 	FoodPreferenceModifier []CodeableConcept             `bson:"foodPreferenceModifier,omitempty" json:"foodPreferenceModifier,omitempty"`

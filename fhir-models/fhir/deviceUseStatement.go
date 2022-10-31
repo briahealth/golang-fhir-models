@@ -33,7 +33,7 @@ type DeviceUseStatement struct {
 	Status            DeviceUseStatementStatus `bson:"status" json:"status"`
 	Subject           Reference                `bson:"subject" json:"subject"`
 	DerivedFrom       []Reference              `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	RecordedOn        *string                  `bson:"recordedOn,omitempty" gorm:"type:dateTime" json:"recordedOn,omitempty"`
+	RecordedOn        *string                  `bson:"recordedOn,omitempty" gorm:"type:timestamp" json:"recordedOn,omitempty"`
 	Source            *Reference               `bson:"source,omitempty" json:"source,omitempty"`
 	Device            Reference                `bson:"device" json:"device"`
 	ReasonCode        []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
