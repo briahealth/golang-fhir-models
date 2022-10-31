@@ -35,7 +35,7 @@ type QuestionnaireResponse struct {
 	Status            QuestionnaireResponseStatus `bson:"status" json:"status"`
 	Subject           *Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Authored          *string                     `bson:"authored,omitempty" json:"authored,omitempty"`
+	Authored          *string                     `bson:"authored,omitempty" gorm:"type:dateTime" json:"authored,omitempty"`
 	Author            *Reference                  `bson:"author,omitempty" json:"author,omitempty"`
 	Source            *Reference                  `bson:"source,omitempty" json:"source,omitempty"`
 	Item              []QuestionnaireResponseItem `bson:"item,omitempty" json:"item,omitempty"`

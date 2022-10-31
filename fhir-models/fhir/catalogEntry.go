@@ -36,8 +36,8 @@ type CatalogEntry struct {
 	Classification           []CodeableConcept          `bson:"classification,omitempty" json:"classification,omitempty"`
 	Status                   *PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
 	ValidityPeriod           *Period                    `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
-	ValidTo                  *string                    `bson:"validTo,omitempty" json:"validTo,omitempty"`
-	LastUpdated              *string                    `bson:"lastUpdated,omitempty" json:"lastUpdated,omitempty"`
+	ValidTo                  *string                    `bson:"validTo,omitempty" gorm:"type:dateTime" json:"validTo,omitempty"`
+	LastUpdated              *string                    `bson:"lastUpdated,omitempty" gorm:"type:dateTime" json:"lastUpdated,omitempty"`
 	AdditionalCharacteristic []CodeableConcept          `bson:"additionalCharacteristic,omitempty" json:"additionalCharacteristic,omitempty"`
 	AdditionalClassification []CodeableConcept          `bson:"additionalClassification,omitempty" json:"additionalClassification,omitempty"`
 	RelatedEntry             []CatalogEntryRelatedEntry `bson:"relatedEntry,omitempty" json:"relatedEntry,omitempty"`

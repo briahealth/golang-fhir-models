@@ -35,7 +35,7 @@ type Claim struct {
 	Use                  Use                          `bson:"use" json:"use"`
 	Patient              Reference                    `bson:"patient" json:"patient"`
 	BillablePeriod       *Period                      `bson:"billablePeriod,omitempty" json:"billablePeriod,omitempty"`
-	Created              string                       `bson:"created" json:"created"`
+	Created              string                       `bson:"created" gorm:"type:dateTime" json:"created"`
 	Enterer              *Reference                   `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Insurer              *Reference                   `bson:"insurer,omitempty" json:"insurer,omitempty"`
 	Provider             Reference                    `bson:"provider" json:"provider"`
@@ -105,7 +105,7 @@ type ClaimProcedure struct {
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int               `bson:"sequence" json:"sequence"`
 	Type              []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	Date              *string           `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string           `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Udi               []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 }
 type ClaimInsurance struct {
@@ -124,7 +124,7 @@ type ClaimAccident struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Date              string           `bson:"date" json:"date"`
+	Date              string           `bson:"date" gorm:"type:date" json:"date"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 }
 type ClaimItem struct {
@@ -143,7 +143,7 @@ type ClaimItem struct {
 	ProgramCode         []CodeableConcept `bson:"programCode,omitempty" json:"programCode,omitempty"`
 	Quantity            *Quantity         `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice           *Money            `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor              *string           `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor              *string           `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Net                 *Money            `bson:"net,omitempty" json:"net,omitempty"`
 	Udi                 []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 	BodySite            *CodeableConcept  `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
@@ -163,7 +163,7 @@ type ClaimItemDetail struct {
 	ProgramCode       []CodeableConcept          `bson:"programCode,omitempty" json:"programCode,omitempty"`
 	Quantity          *Quantity                  `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money                     `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string                    `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *string                    `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Net               *Money                     `bson:"net,omitempty" json:"net,omitempty"`
 	Udi               []Reference                `bson:"udi,omitempty" json:"udi,omitempty"`
 	SubDetail         []ClaimItemDetailSubDetail `bson:"subDetail,omitempty" json:"subDetail,omitempty"`
@@ -180,7 +180,7 @@ type ClaimItemDetailSubDetail struct {
 	ProgramCode       []CodeableConcept `bson:"programCode,omitempty" json:"programCode,omitempty"`
 	Quantity          *Quantity         `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	UnitPrice         *Money            `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Factor            *string           `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *string           `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Net               *Money            `bson:"net,omitempty" json:"net,omitempty"`
 	Udi               []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 }

@@ -33,7 +33,7 @@ type GuidanceResponse struct {
 	Status             GuidanceResponseStatus `bson:"status" json:"status"`
 	Subject            *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter          *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OccurrenceDateTime *string                `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTime *string                `bson:"occurrenceDateTime,omitempty" gorm:"type:dateTime" json:"occurrenceDateTime,omitempty"`
 	Performer          *Reference             `bson:"performer,omitempty" json:"performer,omitempty"`
 	ReasonCode         []CodeableConcept      `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference    []Reference            `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`

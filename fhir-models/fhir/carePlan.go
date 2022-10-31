@@ -42,7 +42,7 @@ type CarePlan struct {
 	Subject               Reference          `bson:"subject" json:"subject"`
 	Encounter             *Reference         `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Period                *Period            `bson:"period,omitempty" json:"period,omitempty"`
-	Created               *string            `bson:"created,omitempty" json:"created,omitempty"`
+	Created               *string            `bson:"created,omitempty" gorm:"type:dateTime" json:"created,omitempty"`
 	Author                *Reference         `bson:"author,omitempty" json:"author,omitempty"`
 	Contributor           []Reference        `bson:"contributor,omitempty" json:"contributor,omitempty"`
 	CareTeam              []Reference        `bson:"careTeam,omitempty" json:"careTeam,omitempty"`

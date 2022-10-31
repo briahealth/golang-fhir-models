@@ -36,7 +36,7 @@ type Measure struct {
 	Subtitle                        *string                   `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
 	Status                          PublicationStatus         `bson:"status" json:"status"`
 	Experimental                    *bool                     `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date                            *string                   `bson:"date,omitempty" json:"date,omitempty"`
+	Date                            *string                   `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Publisher                       *string                   `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact                         []ContactDetail           `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description                     *string                   `bson:"description,omitempty" json:"description,omitempty"`
@@ -45,8 +45,8 @@ type Measure struct {
 	Purpose                         *string                   `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Usage                           *string                   `bson:"usage,omitempty" json:"usage,omitempty"`
 	Copyright                       *string                   `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate                    *string                   `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate                  *string                   `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate                    *string                   `bson:"approvalDate,omitempty" gorm:"type:date" json:"approvalDate,omitempty"`
+	LastReviewDate                  *string                   `bson:"lastReviewDate,omitempty" gorm:"type:date" json:"lastReviewDate,omitempty"`
 	EffectivePeriod                 *Period                   `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Topic                           []CodeableConcept         `bson:"topic,omitempty" json:"topic,omitempty"`
 	Author                          []ContactDetail           `bson:"author,omitempty" json:"author,omitempty"`

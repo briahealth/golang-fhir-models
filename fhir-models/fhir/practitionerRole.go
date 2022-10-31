@@ -49,8 +49,8 @@ type PractitionerRoleAvailableTime struct {
 	ModifierExtension  []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DaysOfWeek         []DaysOfWeek `bson:"daysOfWeek,omitempty" json:"daysOfWeek,omitempty"`
 	AllDay             *bool        `bson:"allDay,omitempty" json:"allDay,omitempty"`
-	AvailableStartTime *string      `bson:"availableStartTime,omitempty" json:"availableStartTime,omitempty"`
-	AvailableEndTime   *string      `bson:"availableEndTime,omitempty" json:"availableEndTime,omitempty"`
+	AvailableStartTime *string      `bson:"availableStartTime,omitempty" gorm:"type:time" json:"availableStartTime,omitempty"`
+	AvailableEndTime   *string      `bson:"availableEndTime,omitempty" gorm:"type:time" json:"availableEndTime,omitempty"`
 }
 type PractitionerRoleNotAvailable struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`

@@ -36,7 +36,7 @@ type Goal struct {
 	Description       CodeableConcept     `bson:"description" json:"description"`
 	Subject           Reference           `bson:"subject" json:"subject"`
 	Target            []GoalTarget        `bson:"target,omitempty" json:"target,omitempty"`
-	StatusDate        *string             `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate        *string             `bson:"statusDate,omitempty" gorm:"type:date" json:"statusDate,omitempty"`
 	StatusReason      *string             `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	ExpressedBy       *Reference          `bson:"expressedBy,omitempty" json:"expressedBy,omitempty"`
 	Addresses         []Reference         `bson:"addresses,omitempty" json:"addresses,omitempty"`

@@ -21,7 +21,7 @@ package fhir
 type Quantity struct {
 	Id         *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
-	Value      *string             `bson:"value,omitempty" json:"value,omitempty"`
+	Value      *string             `bson:"value,omitempty" gorm:"type:decimal" json:"value,omitempty"`
 	Comparator *QuantityComparator `bson:"comparator,omitempty" json:"comparator,omitempty"`
 	Unit       *string             `bson:"unit,omitempty" json:"unit,omitempty"`
 	System     *string             `bson:"system,omitempty" json:"system,omitempty"`

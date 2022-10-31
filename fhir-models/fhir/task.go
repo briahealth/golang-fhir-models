@@ -45,8 +45,8 @@ type Task struct {
 	For                   *Reference        `bson:"for,omitempty" json:"for,omitempty"`
 	Encounter             *Reference        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	ExecutionPeriod       *Period           `bson:"executionPeriod,omitempty" json:"executionPeriod,omitempty"`
-	AuthoredOn            *string           `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
-	LastModified          *string           `bson:"lastModified,omitempty" json:"lastModified,omitempty"`
+	AuthoredOn            *string           `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
+	LastModified          *string           `bson:"lastModified,omitempty" gorm:"type:dateTime" json:"lastModified,omitempty"`
 	Requester             *Reference        `bson:"requester,omitempty" json:"requester,omitempty"`
 	PerformerType         []CodeableConcept `bson:"performerType,omitempty" json:"performerType,omitempty"`
 	Owner                 *Reference        `bson:"owner,omitempty" json:"owner,omitempty"`

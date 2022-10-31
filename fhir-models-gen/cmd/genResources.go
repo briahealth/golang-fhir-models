@@ -349,6 +349,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 				// support polymorphic elements later
 				case 1:
 					statement := fields.Id(name)
+					var sqlType string
 
 					switch element.Type[0].Code {
 					case "code":
@@ -401,7 +402,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 							parentName == "Extension" && name == "Url" {
 							typeIdentifier = "string"
 						} else {
-							typeIdentifier = typeCodeToTypeIdentifier(parentName, name, element.Type[0].Code)
+							typeIdentifier, sqlType = typeCodeToTypeIdentifier(parentName, name, element.Type[0].Code)
 						}
 						if typeIdentifier == "Element" || typeIdentifier == "BackboneElement" {
 							backboneElementName := parentName + name
@@ -423,11 +424,16 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 						}
 					}
 
+					var tags map[string]string
 					if *element.Min == 0 {
-						statement.Tag(map[string]string{"json": pathParts[level] + ",omitempty", "bson": pathParts[level] + ",omitempty"})
+						tags = map[string]string{"json": pathParts[level] + ",omitempty", "bson": pathParts[level] + ",omitempty"}
 					} else {
-						statement.Tag(map[string]string{"json": pathParts[level], "bson": pathParts[level]})
+						tags = map[string]string{"json": pathParts[level], "bson": pathParts[level]}
 					}
+					if sqlType != "" {
+						tags["gorm"] = fmt.Sprintf("type:%s", sqlType)
+					}
+					statement.Tag(tags)
 				}
 			}
 		} else {
@@ -448,58 +454,58 @@ func requiredValueSetBinding(elementDefinition fhir.ElementDefinition) *string {
 	return nil
 }
 
-func typeCodeToTypeIdentifier(parentName, name, typeCode string) string {
+func typeCodeToTypeIdentifier(parentName, name, typeCode string) (dataType string, sqlType string) {
 	switch typeCode {
 	case "base64Binary":
-		return "string"
+		return "string", ""
 	case "boolean":
-		return "bool"
+		return "bool", ""
 	case "canonical":
-		return "string"
+		return "string", ""
 	case "code":
-		return "string"
+		return "string", ""
 	case "date":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into %s\n", "string", parentName, name, "date")
-		return "string"
+		return "string", "date"
 	case "dateTime":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "dateTime")
-		return "string"
+		return "string", "dateTime"
 	case "decimal":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "decimal")
-		return "string"
+		return "string", "decimal"
 	case "id":
-		return "string"
+		return "string", ""
 	case "instant":
-		return "string"
+		return "string", ""
 	case "integer":
-		return "int"
+		return "int", ""
 	case "markdown":
-		return "string"
+		return "string", ""
 	case "oid":
-		return "string"
+		return "string", ""
 	case "positiveInt":
-		return "int"
+		return "int", ""
 	case "string":
-		return "string"
+		return "string", ""
 	case "time":
 		fmt.Printf("Wrong type %s, parentName %s name %s convert into \n", parentName, name, "time")
-		return "string"
+		return "string", "time"
 	case "unsignedInt":
-		return "int"
+		return "int", ""
 	case "uri":
-		return "string"
+		return "string", ""
 	case "url":
-		return "string"
+		return "string", ""
 	case "uuid":
-		return "string"
+		return "string", ""
 	case "xhtml":
-		return "string"
+		return "string", ""
 	case "http://hl7.org/fhirpath/System.String":
-		return "string"
+		return "string", ""
 	default:
-		return typeCode
+		return typeCode, ""
 	}
-	return ""
+	return "", ""
 }
 
 func init() {

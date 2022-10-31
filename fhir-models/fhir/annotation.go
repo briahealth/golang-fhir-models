@@ -21,6 +21,6 @@ package fhir
 type Annotation struct {
 	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Time      *string     `bson:"time,omitempty" json:"time,omitempty"`
+	Time      *string     `bson:"time,omitempty" gorm:"type:dateTime" json:"time,omitempty"`
 	Text      string      `bson:"text" json:"text"`
 }

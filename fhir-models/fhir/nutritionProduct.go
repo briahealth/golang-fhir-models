@@ -66,8 +66,8 @@ type NutritionProductInstance struct {
 	Quantity          *Quantity    `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Identifier        []Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	LotNumber         *string      `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`
-	Expiry            *string      `bson:"expiry,omitempty" json:"expiry,omitempty"`
-	UseBy             *string      `bson:"useBy,omitempty" json:"useBy,omitempty"`
+	Expiry            *string      `bson:"expiry,omitempty" gorm:"type:dateTime" json:"expiry,omitempty"`
+	UseBy             *string      `bson:"useBy,omitempty" gorm:"type:dateTime" json:"useBy,omitempty"`
 }
 type OtherNutritionProduct NutritionProduct
 

@@ -33,7 +33,7 @@ type DocumentManifest struct {
 	Status            DocumentReferenceStatus   `bson:"status" json:"status"`
 	Type              *CodeableConcept          `bson:"type,omitempty" json:"type,omitempty"`
 	Subject           *Reference                `bson:"subject,omitempty" json:"subject,omitempty"`
-	Created           *string                   `bson:"created,omitempty" json:"created,omitempty"`
+	Created           *string                   `bson:"created,omitempty" gorm:"type:dateTime" json:"created,omitempty"`
 	Author            []Reference               `bson:"author,omitempty" json:"author,omitempty"`
 	Recipient         []Reference               `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	Source            *string                   `bson:"source,omitempty" json:"source,omitempty"`

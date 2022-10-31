@@ -35,7 +35,7 @@ type ValueSet struct {
 	Title             *string            `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus  `bson:"status" json:"status"`
 	Experimental      *bool              `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string            `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string            `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Publisher         *string            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string            `bson:"description,omitempty" json:"description,omitempty"`
@@ -51,7 +51,7 @@ type ValueSetCompose struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	LockedDate        *string                  `bson:"lockedDate,omitempty" json:"lockedDate,omitempty"`
+	LockedDate        *string                  `bson:"lockedDate,omitempty" gorm:"type:date" json:"lockedDate,omitempty"`
 	Inactive          *bool                    `bson:"inactive,omitempty" json:"inactive,omitempty"`
 	Include           []ValueSetComposeInclude `bson:"include" json:"include"`
 	Exclude           []ValueSetComposeInclude `bson:"exclude,omitempty" json:"exclude,omitempty"`
@@ -95,7 +95,7 @@ type ValueSetExpansion struct {
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *string                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Timestamp         string                       `bson:"timestamp" json:"timestamp"`
+	Timestamp         string                       `bson:"timestamp" gorm:"type:dateTime" json:"timestamp"`
 	Total             *int                         `bson:"total,omitempty" json:"total,omitempty"`
 	Offset            *int                         `bson:"offset,omitempty" json:"offset,omitempty"`
 	Parameter         []ValueSetExpansionParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`

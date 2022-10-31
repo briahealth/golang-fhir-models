@@ -31,7 +31,7 @@ type NamingSystem struct {
 	Name              string                 `bson:"name" json:"name"`
 	Status            PublicationStatus      `bson:"status" json:"status"`
 	Kind              NamingSystemType       `bson:"kind" json:"kind"`
-	Date              string                 `bson:"date" json:"date"`
+	Date              string                 `bson:"date" gorm:"type:dateTime" json:"date"`
 	Publisher         *string                `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail        `bson:"contact,omitempty" json:"contact,omitempty"`
 	Responsible       *string                `bson:"responsible,omitempty" json:"responsible,omitempty"`

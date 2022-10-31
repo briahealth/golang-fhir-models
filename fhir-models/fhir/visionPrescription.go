@@ -30,10 +30,10 @@ type VisionPrescription struct {
 	ModifierExtension []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            FinancialResourceStatusCodes          `bson:"status" json:"status"`
-	Created           string                                `bson:"created" json:"created"`
+	Created           string                                `bson:"created" gorm:"type:dateTime" json:"created"`
 	Patient           Reference                             `bson:"patient" json:"patient"`
 	Encounter         *Reference                            `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	DateWritten       string                                `bson:"dateWritten" json:"dateWritten"`
+	DateWritten       string                                `bson:"dateWritten" gorm:"type:dateTime" json:"dateWritten"`
 	Prescriber        Reference                             `bson:"prescriber" json:"prescriber"`
 	LensSpecification []VisionPrescriptionLensSpecification `bson:"lensSpecification" json:"lensSpecification"`
 }
@@ -43,14 +43,14 @@ type VisionPrescriptionLensSpecification struct {
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Product           CodeableConcept                            `bson:"product" json:"product"`
 	Eye               VisionEyes                                 `bson:"eye" json:"eye"`
-	Sphere            *string                                    `bson:"sphere,omitempty" json:"sphere,omitempty"`
-	Cylinder          *string                                    `bson:"cylinder,omitempty" json:"cylinder,omitempty"`
+	Sphere            *string                                    `bson:"sphere,omitempty" gorm:"type:decimal" json:"sphere,omitempty"`
+	Cylinder          *string                                    `bson:"cylinder,omitempty" gorm:"type:decimal" json:"cylinder,omitempty"`
 	Axis              *int                                       `bson:"axis,omitempty" json:"axis,omitempty"`
 	Prism             []VisionPrescriptionLensSpecificationPrism `bson:"prism,omitempty" json:"prism,omitempty"`
-	Add               *string                                    `bson:"add,omitempty" json:"add,omitempty"`
-	Power             *string                                    `bson:"power,omitempty" json:"power,omitempty"`
-	BackCurve         *string                                    `bson:"backCurve,omitempty" json:"backCurve,omitempty"`
-	Diameter          *string                                    `bson:"diameter,omitempty" json:"diameter,omitempty"`
+	Add               *string                                    `bson:"add,omitempty" gorm:"type:decimal" json:"add,omitempty"`
+	Power             *string                                    `bson:"power,omitempty" gorm:"type:decimal" json:"power,omitempty"`
+	BackCurve         *string                                    `bson:"backCurve,omitempty" gorm:"type:decimal" json:"backCurve,omitempty"`
+	Diameter          *string                                    `bson:"diameter,omitempty" gorm:"type:decimal" json:"diameter,omitempty"`
 	Duration          *Quantity                                  `bson:"duration,omitempty" json:"duration,omitempty"`
 	Color             *string                                    `bson:"color,omitempty" json:"color,omitempty"`
 	Brand             *string                                    `bson:"brand,omitempty" json:"brand,omitempty"`
@@ -60,7 +60,7 @@ type VisionPrescriptionLensSpecificationPrism struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Amount            string      `bson:"amount" json:"amount"`
+	Amount            string      `bson:"amount" gorm:"type:decimal" json:"amount"`
 	Base              VisionBase  `bson:"base" json:"base"`
 }
 type OtherVisionPrescription VisionPrescription

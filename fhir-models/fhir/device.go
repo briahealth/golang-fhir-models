@@ -35,8 +35,8 @@ type Device struct {
 	StatusReason       []CodeableConcept      `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	DistinctIdentifier *string                `bson:"distinctIdentifier,omitempty" json:"distinctIdentifier,omitempty"`
 	Manufacturer       *string                `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
-	ManufactureDate    *string                `bson:"manufactureDate,omitempty" json:"manufactureDate,omitempty"`
-	ExpirationDate     *string                `bson:"expirationDate,omitempty" json:"expirationDate,omitempty"`
+	ManufactureDate    *string                `bson:"manufactureDate,omitempty" gorm:"type:dateTime" json:"manufactureDate,omitempty"`
+	ExpirationDate     *string                `bson:"expirationDate,omitempty" gorm:"type:dateTime" json:"expirationDate,omitempty"`
 	LotNumber          *string                `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`
 	SerialNumber       *string                `bson:"serialNumber,omitempty" json:"serialNumber,omitempty"`
 	DeviceName         []DeviceDeviceName     `bson:"deviceName,omitempty" json:"deviceName,omitempty"`

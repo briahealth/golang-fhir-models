@@ -35,7 +35,7 @@ type Citation struct {
 	Title             *string                  `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus        `bson:"status" json:"status"`
 	Experimental      *bool                    `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string                  `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string                  `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Publisher         *string                  `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail          `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                  `bson:"description,omitempty" json:"description,omitempty"`
@@ -43,8 +43,8 @@ type Citation struct {
 	Jurisdiction      []CodeableConcept        `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string                  `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Copyright         *string                  `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate      *string                  `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate    *string                  `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate      *string                  `bson:"approvalDate,omitempty" gorm:"type:date" json:"approvalDate,omitempty"`
+	LastReviewDate    *string                  `bson:"lastReviewDate,omitempty" gorm:"type:date" json:"lastReviewDate,omitempty"`
 	EffectivePeriod   *Period                  `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Author            []ContactDetail          `bson:"author,omitempty" json:"author,omitempty"`
 	Editor            []ContactDetail          `bson:"editor,omitempty" json:"editor,omitempty"`
@@ -93,7 +93,7 @@ type CitationCitedArtifact struct {
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                           `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	RelatedIdentifier []Identifier                           `bson:"relatedIdentifier,omitempty" json:"relatedIdentifier,omitempty"`
-	DateAccessed      *string                                `bson:"dateAccessed,omitempty" json:"dateAccessed,omitempty"`
+	DateAccessed      *string                                `bson:"dateAccessed,omitempty" gorm:"type:dateTime" json:"dateAccessed,omitempty"`
 	Version           *CitationCitedArtifactVersion          `bson:"version,omitempty" json:"version,omitempty"`
 	CurrentState      []CodeableConcept                      `bson:"currentState,omitempty" json:"currentState,omitempty"`
 	StatusDate        []CitationCitedArtifactStatusDate      `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
@@ -160,8 +160,8 @@ type CitationCitedArtifactPublicationForm struct {
 	ModifierExtension []Extension                                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	PublishedIn       *CitationCitedArtifactPublicationFormPublishedIn     `bson:"publishedIn,omitempty" json:"publishedIn,omitempty"`
 	PeriodicRelease   *CitationCitedArtifactPublicationFormPeriodicRelease `bson:"periodicRelease,omitempty" json:"periodicRelease,omitempty"`
-	ArticleDate       *string                                              `bson:"articleDate,omitempty" json:"articleDate,omitempty"`
-	LastRevisionDate  *string                                              `bson:"lastRevisionDate,omitempty" json:"lastRevisionDate,omitempty"`
+	ArticleDate       *string                                              `bson:"articleDate,omitempty" gorm:"type:dateTime" json:"articleDate,omitempty"`
+	LastRevisionDate  *string                                              `bson:"lastRevisionDate,omitempty" gorm:"type:dateTime" json:"lastRevisionDate,omitempty"`
 	Language          []CodeableConcept                                    `bson:"language,omitempty" json:"language,omitempty"`
 	AccessionNumber   *string                                              `bson:"accessionNumber,omitempty" json:"accessionNumber,omitempty"`
 	PageString        *string                                              `bson:"pageString,omitempty" json:"pageString,omitempty"`
@@ -193,7 +193,7 @@ type CitationCitedArtifactPublicationFormPeriodicReleaseDateOfPublication struct
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Date              *string     `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string     `bson:"date,omitempty" gorm:"type:date" json:"date,omitempty"`
 	Year              *string     `bson:"year,omitempty" json:"year,omitempty"`
 	Month             *string     `bson:"month,omitempty" json:"month,omitempty"`
 	Day               *string     `bson:"day,omitempty" json:"day,omitempty"`
@@ -263,7 +263,7 @@ type CitationCitedArtifactContributorshipEntryContributionInstance struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept `bson:"type" json:"type"`
-	Time              *string         `bson:"time,omitempty" json:"time,omitempty"`
+	Time              *string         `bson:"time,omitempty" gorm:"type:dateTime" json:"time,omitempty"`
 }
 type CitationCitedArtifactContributorshipSummary struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`

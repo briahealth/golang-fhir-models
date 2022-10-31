@@ -32,7 +32,7 @@ type Person struct {
 	Name                 []HumanName           `bson:"name,omitempty" json:"name,omitempty"`
 	Telecom              []ContactPoint        `bson:"telecom,omitempty" json:"telecom,omitempty"`
 	Gender               *AdministrativeGender `bson:"gender,omitempty" json:"gender,omitempty"`
-	BirthDate            *string               `bson:"birthDate,omitempty" json:"birthDate,omitempty"`
+	BirthDate            *string               `bson:"birthDate,omitempty" gorm:"type:date" json:"birthDate,omitempty"`
 	Address              []Address             `bson:"address,omitempty" json:"address,omitempty"`
 	Photo                *Attachment           `bson:"photo,omitempty" json:"photo,omitempty"`
 	ManagingOrganization *Reference            `bson:"managingOrganization,omitempty" json:"managingOrganization,omitempty"`

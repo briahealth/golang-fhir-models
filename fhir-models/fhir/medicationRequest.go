@@ -38,7 +38,7 @@ type MedicationRequest struct {
 	Subject               Reference                         `bson:"subject" json:"subject"`
 	Encounter             *Reference                        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	SupportingInformation []Reference                       `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
-	AuthoredOn            *string                           `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOn            *string                           `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
 	Requester             *Reference                        `bson:"requester,omitempty" json:"requester,omitempty"`
 	Performer             *Reference                        `bson:"performer,omitempty" json:"performer,omitempty"`
 	PerformerType         *CodeableConcept                  `bson:"performerType,omitempty" json:"performerType,omitempty"`

@@ -28,5 +28,5 @@ type Attachment struct {
 	Size        *int        `bson:"size,omitempty" json:"size,omitempty"`
 	Hash        *string     `bson:"hash,omitempty" json:"hash,omitempty"`
 	Title       *string     `bson:"title,omitempty" json:"title,omitempty"`
-	Creation    *string     `bson:"creation,omitempty" json:"creation,omitempty"`
+	Creation    *string     `bson:"creation,omitempty" gorm:"type:dateTime" json:"creation,omitempty"`
 }

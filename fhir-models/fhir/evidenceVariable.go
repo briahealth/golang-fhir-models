@@ -36,7 +36,7 @@ type EvidenceVariable struct {
 	ShortTitle                *string                          `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle                  *string                          `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
 	Status                    PublicationStatus                `bson:"status" json:"status"`
-	Date                      *string                          `bson:"date,omitempty" json:"date,omitempty"`
+	Date                      *string                          `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Description               *string                          `bson:"description,omitempty" json:"description,omitempty"`
 	Note                      []Annotation                     `bson:"note,omitempty" json:"note,omitempty"`
 	UseContext                []UsageContext                   `bson:"useContext,omitempty" json:"useContext,omitempty"`

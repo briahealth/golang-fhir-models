@@ -33,7 +33,7 @@ type MeasureReport struct {
 	Type                MeasureReportType    `bson:"type" json:"type"`
 	Measure             string               `bson:"measure" json:"measure"`
 	Subject             *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
-	Date                *string              `bson:"date,omitempty" json:"date,omitempty"`
+	Date                *string              `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Reporter            *Reference           `bson:"reporter,omitempty" json:"reporter,omitempty"`
 	Period              Period               `bson:"period" json:"period"`
 	ImprovementNotation *CodeableConcept     `bson:"improvementNotation,omitempty" json:"improvementNotation,omitempty"`

@@ -33,7 +33,7 @@ type PackagedProductDefinition struct {
 	Type                  *CodeableConcept                               `bson:"type,omitempty" json:"type,omitempty"`
 	PackageFor            []Reference                                    `bson:"packageFor,omitempty" json:"packageFor,omitempty"`
 	Status                *CodeableConcept                               `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate            *string                                        `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate            *string                                        `bson:"statusDate,omitempty" gorm:"type:dateTime" json:"statusDate,omitempty"`
 	ContainedItemQuantity []Quantity                                     `bson:"containedItemQuantity,omitempty" json:"containedItemQuantity,omitempty"`
 	Description           *string                                        `bson:"description,omitempty" json:"description,omitempty"`
 	LegalStatusOfSupply   []PackagedProductDefinitionLegalStatusOfSupply `bson:"legalStatusOfSupply,omitempty" json:"legalStatusOfSupply,omitempty"`

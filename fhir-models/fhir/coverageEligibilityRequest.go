@@ -33,7 +33,7 @@ type CoverageEligibilityRequest struct {
 	Priority          *CodeableConcept                           `bson:"priority,omitempty" json:"priority,omitempty"`
 	Purpose           []EligibilityRequestPurpose                `bson:"purpose" json:"purpose"`
 	Patient           Reference                                  `bson:"patient" json:"patient"`
-	Created           string                                     `bson:"created" json:"created"`
+	Created           string                                     `bson:"created" gorm:"type:dateTime" json:"created"`
 	Enterer           *Reference                                 `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Provider          *Reference                                 `bson:"provider,omitempty" json:"provider,omitempty"`
 	Insurer           Reference                                  `bson:"insurer" json:"insurer"`

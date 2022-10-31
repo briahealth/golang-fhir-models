@@ -32,12 +32,12 @@ type VerificationResult struct {
 	TargetLocation    []string                          `bson:"targetLocation,omitempty" json:"targetLocation,omitempty"`
 	Need              *CodeableConcept                  `bson:"need,omitempty" json:"need,omitempty"`
 	Status            string                            `bson:"status" json:"status"`
-	StatusDate        *string                           `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate        *string                           `bson:"statusDate,omitempty" gorm:"type:dateTime" json:"statusDate,omitempty"`
 	ValidationType    *CodeableConcept                  `bson:"validationType,omitempty" json:"validationType,omitempty"`
 	ValidationProcess []CodeableConcept                 `bson:"validationProcess,omitempty" json:"validationProcess,omitempty"`
 	Frequency         *Timing                           `bson:"frequency,omitempty" json:"frequency,omitempty"`
-	LastPerformed     *string                           `bson:"lastPerformed,omitempty" json:"lastPerformed,omitempty"`
-	NextScheduled     *string                           `bson:"nextScheduled,omitempty" json:"nextScheduled,omitempty"`
+	LastPerformed     *string                           `bson:"lastPerformed,omitempty" gorm:"type:dateTime" json:"lastPerformed,omitempty"`
+	NextScheduled     *string                           `bson:"nextScheduled,omitempty" gorm:"type:date" json:"nextScheduled,omitempty"`
 	FailureAction     *CodeableConcept                  `bson:"failureAction,omitempty" json:"failureAction,omitempty"`
 	PrimarySource     []VerificationResultPrimarySource `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
 	Attestation       *VerificationResultAttestation    `bson:"attestation,omitempty" json:"attestation,omitempty"`
@@ -51,7 +51,7 @@ type VerificationResultPrimarySource struct {
 	Type                []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	CommunicationMethod []CodeableConcept `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
 	ValidationStatus    *CodeableConcept  `bson:"validationStatus,omitempty" json:"validationStatus,omitempty"`
-	ValidationDate      *string           `bson:"validationDate,omitempty" json:"validationDate,omitempty"`
+	ValidationDate      *string           `bson:"validationDate,omitempty" gorm:"type:dateTime" json:"validationDate,omitempty"`
 	CanPushUpdates      *CodeableConcept  `bson:"canPushUpdates,omitempty" json:"canPushUpdates,omitempty"`
 	PushTypeAvailable   []CodeableConcept `bson:"pushTypeAvailable,omitempty" json:"pushTypeAvailable,omitempty"`
 }
@@ -62,7 +62,7 @@ type VerificationResultAttestation struct {
 	Who                       *Reference       `bson:"who,omitempty" json:"who,omitempty"`
 	OnBehalfOf                *Reference       `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
 	CommunicationMethod       *CodeableConcept `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
-	Date                      *string          `bson:"date,omitempty" json:"date,omitempty"`
+	Date                      *string          `bson:"date,omitempty" gorm:"type:date" json:"date,omitempty"`
 	SourceIdentityCertificate *string          `bson:"sourceIdentityCertificate,omitempty" json:"sourceIdentityCertificate,omitempty"`
 	ProxyIdentityCertificate  *string          `bson:"proxyIdentityCertificate,omitempty" json:"proxyIdentityCertificate,omitempty"`
 	ProxySignature            *Signature       `bson:"proxySignature,omitempty" json:"proxySignature,omitempty"`

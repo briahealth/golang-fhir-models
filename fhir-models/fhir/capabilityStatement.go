@@ -34,7 +34,7 @@ type CapabilityStatement struct {
 	Title               *string                            `bson:"title,omitempty" json:"title,omitempty"`
 	Status              PublicationStatus                  `bson:"status" json:"status"`
 	Experimental        *bool                              `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date                string                             `bson:"date" json:"date"`
+	Date                string                             `bson:"date" gorm:"type:dateTime" json:"date"`
 	Publisher           *string                            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact             []ContactDetail                    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description         *string                            `bson:"description,omitempty" json:"description,omitempty"`
@@ -61,7 +61,7 @@ type CapabilityStatementSoftware struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string      `bson:"name" json:"name"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
-	ReleaseDate       *string     `bson:"releaseDate,omitempty" json:"releaseDate,omitempty"`
+	ReleaseDate       *string     `bson:"releaseDate,omitempty" gorm:"type:dateTime" json:"releaseDate,omitempty"`
 }
 type CapabilityStatementImplementation struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`

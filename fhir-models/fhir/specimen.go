@@ -33,7 +33,7 @@ type Specimen struct {
 	Status              *SpecimenStatus      `bson:"status,omitempty" json:"status,omitempty"`
 	Type                *CodeableConcept     `bson:"type,omitempty" json:"type,omitempty"`
 	Subject             *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
-	ReceivedTime        *string              `bson:"receivedTime,omitempty" json:"receivedTime,omitempty"`
+	ReceivedTime        *string              `bson:"receivedTime,omitempty" gorm:"type:dateTime" json:"receivedTime,omitempty"`
 	Parent              []Reference          `bson:"parent,omitempty" json:"parent,omitempty"`
 	Request             []Reference          `bson:"request,omitempty" json:"request,omitempty"`
 	Collection          *SpecimenCollection  `bson:"collection,omitempty" json:"collection,omitempty"`

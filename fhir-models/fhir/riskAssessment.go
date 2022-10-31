@@ -51,7 +51,7 @@ type RiskAssessmentPrediction struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Outcome           *CodeableConcept `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	QualitativeRisk   *CodeableConcept `bson:"qualitativeRisk,omitempty" json:"qualitativeRisk,omitempty"`
-	RelativeRisk      *string          `bson:"relativeRisk,omitempty" json:"relativeRisk,omitempty"`
+	RelativeRisk      *string          `bson:"relativeRisk,omitempty" gorm:"type:decimal" json:"relativeRisk,omitempty"`
 	Rationale         *string          `bson:"rationale,omitempty" json:"rationale,omitempty"`
 }
 type OtherRiskAssessment RiskAssessment

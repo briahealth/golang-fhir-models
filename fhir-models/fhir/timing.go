@@ -22,7 +22,7 @@ type Timing struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Event             []string         `bson:"event,omitempty" json:"event,omitempty"`
+	Event             []string         `bson:"event,omitempty" gorm:"type:dateTime" json:"event,omitempty"`
 	Repeat            *TimingRepeat    `bson:"repeat,omitempty" json:"repeat,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 }
@@ -31,16 +31,16 @@ type TimingRepeat struct {
 	Extension    []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	Count        *int         `bson:"count,omitempty" json:"count,omitempty"`
 	CountMax     *int         `bson:"countMax,omitempty" json:"countMax,omitempty"`
-	Duration     *string      `bson:"duration,omitempty" json:"duration,omitempty"`
-	DurationMax  *string      `bson:"durationMax,omitempty" json:"durationMax,omitempty"`
+	Duration     *string      `bson:"duration,omitempty" gorm:"type:decimal" json:"duration,omitempty"`
+	DurationMax  *string      `bson:"durationMax,omitempty" gorm:"type:decimal" json:"durationMax,omitempty"`
 	DurationUnit *string      `bson:"durationUnit,omitempty" json:"durationUnit,omitempty"`
 	Frequency    *int         `bson:"frequency,omitempty" json:"frequency,omitempty"`
 	FrequencyMax *int         `bson:"frequencyMax,omitempty" json:"frequencyMax,omitempty"`
-	Period       *string      `bson:"period,omitempty" json:"period,omitempty"`
-	PeriodMax    *string      `bson:"periodMax,omitempty" json:"periodMax,omitempty"`
+	Period       *string      `bson:"period,omitempty" gorm:"type:decimal" json:"period,omitempty"`
+	PeriodMax    *string      `bson:"periodMax,omitempty" gorm:"type:decimal" json:"periodMax,omitempty"`
 	PeriodUnit   *string      `bson:"periodUnit,omitempty" json:"periodUnit,omitempty"`
 	DayOfWeek    []DaysOfWeek `bson:"dayOfWeek,omitempty" json:"dayOfWeek,omitempty"`
-	TimeOfDay    []string     `bson:"timeOfDay,omitempty" json:"timeOfDay,omitempty"`
+	TimeOfDay    []string     `bson:"timeOfDay,omitempty" gorm:"type:time" json:"timeOfDay,omitempty"`
 	When         []string     `bson:"when,omitempty" json:"when,omitempty"`
 	Offset       *int         `bson:"offset,omitempty" json:"offset,omitempty"`
 }

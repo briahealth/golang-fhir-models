@@ -40,7 +40,7 @@ type DeviceRequest struct {
 	Parameter             []DeviceRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
 	Subject               Reference                `bson:"subject" json:"subject"`
 	Encounter             *Reference               `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	AuthoredOn            *string                  `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOn            *string                  `bson:"authoredOn,omitempty" gorm:"type:dateTime" json:"authoredOn,omitempty"`
 	Requester             *Reference               `bson:"requester,omitempty" json:"requester,omitempty"`
 	PerformerType         *CodeableConcept         `bson:"performerType,omitempty" json:"performerType,omitempty"`
 	Performer             *Reference               `bson:"performer,omitempty" json:"performer,omitempty"`

@@ -34,7 +34,7 @@ type FamilyMemberHistory struct {
 	Status                FamilyHistoryStatus            `bson:"status" json:"status"`
 	DataAbsentReason      *CodeableConcept               `bson:"dataAbsentReason,omitempty" json:"dataAbsentReason,omitempty"`
 	Patient               Reference                      `bson:"patient" json:"patient"`
-	Date                  *string                        `bson:"date,omitempty" json:"date,omitempty"`
+	Date                  *string                        `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Name                  *string                        `bson:"name,omitempty" json:"name,omitempty"`
 	Relationship          CodeableConcept                `bson:"relationship" json:"relationship"`
 	Sex                   *CodeableConcept               `bson:"sex,omitempty" json:"sex,omitempty"`

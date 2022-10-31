@@ -34,7 +34,7 @@ type RegulatedAuthorization struct {
 	Description       *string                     `bson:"description,omitempty" json:"description,omitempty"`
 	Region            []CodeableConcept           `bson:"region,omitempty" json:"region,omitempty"`
 	Status            *CodeableConcept            `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate        *string                     `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDate        *string                     `bson:"statusDate,omitempty" gorm:"type:dateTime" json:"statusDate,omitempty"`
 	ValidityPeriod    *Period                     `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
 	Indication        *CodeableReference          `bson:"indication,omitempty" json:"indication,omitempty"`
 	IntendedUse       *CodeableConcept            `bson:"intendedUse,omitempty" json:"intendedUse,omitempty"`

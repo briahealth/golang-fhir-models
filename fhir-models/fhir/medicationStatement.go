@@ -36,7 +36,7 @@ type MedicationStatement struct {
 	Category          *CodeableConcept  `bson:"category,omitempty" json:"category,omitempty"`
 	Subject           Reference         `bson:"subject" json:"subject"`
 	Context           *Reference        `bson:"context,omitempty" json:"context,omitempty"`
-	DateAsserted      *string           `bson:"dateAsserted,omitempty" json:"dateAsserted,omitempty"`
+	DateAsserted      *string           `bson:"dateAsserted,omitempty" gorm:"type:dateTime" json:"dateAsserted,omitempty"`
 	InformationSource *Reference        `bson:"informationSource,omitempty" json:"informationSource,omitempty"`
 	DerivedFrom       []Reference       `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
 	ReasonCode        []CodeableConcept `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`

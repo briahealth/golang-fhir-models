@@ -34,7 +34,7 @@ type Invoice struct {
 	Type                *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
 	Subject             *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
 	Recipient           *Reference                      `bson:"recipient,omitempty" json:"recipient,omitempty"`
-	Date                *string                         `bson:"date,omitempty" json:"date,omitempty"`
+	Date                *string                         `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Participant         []InvoiceParticipant            `bson:"participant,omitempty" json:"participant,omitempty"`
 	Issuer              *Reference                      `bson:"issuer,omitempty" json:"issuer,omitempty"`
 	Account             *Reference                      `bson:"account,omitempty" json:"account,omitempty"`
@@ -65,7 +65,7 @@ type InvoiceLineItemPriceComponent struct {
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              InvoicePriceComponentType `bson:"type" json:"type"`
 	Code              *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
-	Factor            *string                   `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *string                   `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Amount            *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type OtherInvoice Invoice

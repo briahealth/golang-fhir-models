@@ -33,7 +33,7 @@ type Consent struct {
 	Scope             CodeableConcept       `bson:"scope" json:"scope"`
 	Category          []CodeableConcept     `bson:"category" json:"category"`
 	Patient           *Reference            `bson:"patient,omitempty" json:"patient,omitempty"`
-	DateTime          *string               `bson:"dateTime,omitempty" json:"dateTime,omitempty"`
+	DateTime          *string               `bson:"dateTime,omitempty" gorm:"type:dateTime" json:"dateTime,omitempty"`
 	Performer         []Reference           `bson:"performer,omitempty" json:"performer,omitempty"`
 	Organization      []Reference           `bson:"organization,omitempty" json:"organization,omitempty"`
 	Policy            []ConsentPolicy       `bson:"policy,omitempty" json:"policy,omitempty"`
@@ -54,7 +54,7 @@ type ConsentVerification struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Verified          bool        `bson:"verified" json:"verified"`
 	VerifiedWith      *Reference  `bson:"verifiedWith,omitempty" json:"verifiedWith,omitempty"`
-	VerificationDate  *string     `bson:"verificationDate,omitempty" json:"verificationDate,omitempty"`
+	VerificationDate  *string     `bson:"verificationDate,omitempty" gorm:"type:dateTime" json:"verificationDate,omitempty"`
 }
 type ConsentProvision struct {
 	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`

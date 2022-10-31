@@ -50,9 +50,9 @@ type LocationPosition struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Longitude         string      `bson:"longitude" json:"longitude"`
-	Latitude          string      `bson:"latitude" json:"latitude"`
-	Altitude          *string     `bson:"altitude,omitempty" json:"altitude,omitempty"`
+	Longitude         string      `bson:"longitude" gorm:"type:decimal" json:"longitude"`
+	Latitude          string      `bson:"latitude" gorm:"type:decimal" json:"latitude"`
+	Altitude          *string     `bson:"altitude,omitempty" gorm:"type:decimal" json:"altitude,omitempty"`
 }
 type LocationHoursOfOperation struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
@@ -60,8 +60,8 @@ type LocationHoursOfOperation struct {
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DaysOfWeek        []DaysOfWeek `bson:"daysOfWeek,omitempty" json:"daysOfWeek,omitempty"`
 	AllDay            *bool        `bson:"allDay,omitempty" json:"allDay,omitempty"`
-	OpeningTime       *string      `bson:"openingTime,omitempty" json:"openingTime,omitempty"`
-	ClosingTime       *string      `bson:"closingTime,omitempty" json:"closingTime,omitempty"`
+	OpeningTime       *string      `bson:"openingTime,omitempty" gorm:"type:time" json:"openingTime,omitempty"`
+	ClosingTime       *string      `bson:"closingTime,omitempty" gorm:"type:time" json:"closingTime,omitempty"`
 }
 type OtherLocation Location
 

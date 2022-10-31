@@ -33,9 +33,9 @@ type TestReport struct {
 	Status            TestReportStatus        `bson:"status" json:"status"`
 	TestScript        Reference               `bson:"testScript" json:"testScript"`
 	Result            TestReportResult        `bson:"result" json:"result"`
-	Score             *string                 `bson:"score,omitempty" json:"score,omitempty"`
+	Score             *string                 `bson:"score,omitempty" gorm:"type:decimal" json:"score,omitempty"`
 	Tester            *string                 `bson:"tester,omitempty" json:"tester,omitempty"`
-	Issued            *string                 `bson:"issued,omitempty" json:"issued,omitempty"`
+	Issued            *string                 `bson:"issued,omitempty" gorm:"type:dateTime" json:"issued,omitempty"`
 	Participant       []TestReportParticipant `bson:"participant,omitempty" json:"participant,omitempty"`
 	Setup             *TestReportSetup        `bson:"setup,omitempty" json:"setup,omitempty"`
 	Test              []TestReportTest        `bson:"test,omitempty" json:"test,omitempty"`

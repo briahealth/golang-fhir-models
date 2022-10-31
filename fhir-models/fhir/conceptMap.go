@@ -35,7 +35,7 @@ type ConceptMap struct {
 	Title             *string           `bson:"title,omitempty" json:"title,omitempty"`
 	Status            PublicationStatus `bson:"status" json:"status"`
 	Experimental      *bool             `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string           `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string           `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Publisher         *string           `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail   `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string           `bson:"description,omitempty" json:"description,omitempty"`

@@ -42,11 +42,11 @@ type ChargeItem struct {
 	CostCenter             *Reference            `bson:"costCenter,omitempty" json:"costCenter,omitempty"`
 	Quantity               *Quantity             `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Bodysite               []CodeableConcept     `bson:"bodysite,omitempty" json:"bodysite,omitempty"`
-	FactorOverride         *string               `bson:"factorOverride,omitempty" json:"factorOverride,omitempty"`
+	FactorOverride         *string               `bson:"factorOverride,omitempty" gorm:"type:decimal" json:"factorOverride,omitempty"`
 	PriceOverride          *Money                `bson:"priceOverride,omitempty" json:"priceOverride,omitempty"`
 	OverrideReason         *string               `bson:"overrideReason,omitempty" json:"overrideReason,omitempty"`
 	Enterer                *Reference            `bson:"enterer,omitempty" json:"enterer,omitempty"`
-	EnteredDate            *string               `bson:"enteredDate,omitempty" json:"enteredDate,omitempty"`
+	EnteredDate            *string               `bson:"enteredDate,omitempty" gorm:"type:dateTime" json:"enteredDate,omitempty"`
 	Reason                 []CodeableConcept     `bson:"reason,omitempty" json:"reason,omitempty"`
 	Service                []Reference           `bson:"service,omitempty" json:"service,omitempty"`
 	Account                []Reference           `bson:"account,omitempty" json:"account,omitempty"`

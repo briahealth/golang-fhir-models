@@ -37,15 +37,15 @@ type ChargeItemDefinition struct {
 	Replaces          []string                            `bson:"replaces,omitempty" json:"replaces,omitempty"`
 	Status            PublicationStatus                   `bson:"status" json:"status"`
 	Experimental      *bool                               `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              *string                             `bson:"date,omitempty" json:"date,omitempty"`
+	Date              *string                             `bson:"date,omitempty" gorm:"type:dateTime" json:"date,omitempty"`
 	Publisher         *string                             `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                     `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                             `bson:"description,omitempty" json:"description,omitempty"`
 	UseContext        []UsageContext                      `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Jurisdiction      []CodeableConcept                   `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Copyright         *string                             `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	ApprovalDate      *string                             `bson:"approvalDate,omitempty" json:"approvalDate,omitempty"`
-	LastReviewDate    *string                             `bson:"lastReviewDate,omitempty" json:"lastReviewDate,omitempty"`
+	ApprovalDate      *string                             `bson:"approvalDate,omitempty" gorm:"type:date" json:"approvalDate,omitempty"`
+	LastReviewDate    *string                             `bson:"lastReviewDate,omitempty" gorm:"type:date" json:"lastReviewDate,omitempty"`
 	EffectivePeriod   *Period                             `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Code              *CodeableConcept                    `bson:"code,omitempty" json:"code,omitempty"`
 	Instance          []Reference                         `bson:"instance,omitempty" json:"instance,omitempty"`
@@ -73,7 +73,7 @@ type ChargeItemDefinitionPropertyGroupPriceComponent struct {
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              InvoicePriceComponentType `bson:"type" json:"type"`
 	Code              *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
-	Factor            *string                   `bson:"factor,omitempty" json:"factor,omitempty"`
+	Factor            *string                   `bson:"factor,omitempty" gorm:"type:decimal" json:"factor,omitempty"`
 	Amount            *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type OtherChargeItemDefinition ChargeItemDefinition

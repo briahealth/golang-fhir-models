@@ -44,7 +44,7 @@ type Appointment struct {
 	End                   *string                  `bson:"end,omitempty" json:"end,omitempty"`
 	MinutesDuration       *int                     `bson:"minutesDuration,omitempty" json:"minutesDuration,omitempty"`
 	Slot                  []Reference              `bson:"slot,omitempty" json:"slot,omitempty"`
-	Created               *string                  `bson:"created,omitempty" json:"created,omitempty"`
+	Created               *string                  `bson:"created,omitempty" gorm:"type:dateTime" json:"created,omitempty"`
 	Comment               *string                  `bson:"comment,omitempty" json:"comment,omitempty"`
 	PatientInstruction    *string                  `bson:"patientInstruction,omitempty" json:"patientInstruction,omitempty"`
 	BasedOn               []Reference              `bson:"basedOn,omitempty" json:"basedOn,omitempty"`

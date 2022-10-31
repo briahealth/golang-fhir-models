@@ -32,7 +32,7 @@ type CoverageEligibilityResponse struct {
 	Status            FinancialResourceStatusCodes           `bson:"status" json:"status"`
 	Purpose           []EligibilityResponsePurpose           `bson:"purpose" json:"purpose"`
 	Patient           Reference                              `bson:"patient" json:"patient"`
-	Created           string                                 `bson:"created" json:"created"`
+	Created           string                                 `bson:"created" gorm:"type:dateTime" json:"created"`
 	Requestor         *Reference                             `bson:"requestor,omitempty" json:"requestor,omitempty"`
 	Request           Reference                              `bson:"request" json:"request"`
 	Outcome           RemittanceOutcome                      `bson:"outcome" json:"outcome"`
